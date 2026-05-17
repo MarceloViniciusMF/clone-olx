@@ -1,0 +1,245 @@
+/* public/css/custom.css */
+
+/* 1. DEFINIÇÃO DAS VARIÁVEIS DE COR (Seu código) */
+:root {
+    --olx-purple: #6E0AD6;       
+    --olx-orange: #F28000;       
+    --olx-background-gray: #F2F4F5; 
+    --olx-text-gray: #5A6A7D;     
+    --olx-text-light: #8A98A8;   
+}
+
+/* 2. APLICAÇÃO INICIAL (Seu código) */
+body {
+    background-color: var(--olx-background-gray);
+    color: var(--olx-text-gray);
+}
+
+/* ------------------------------------------- */
+/* 3. NOVOS ESTILOS DO HEADER (NAVBAR)         */
+/* ------------------------------------------- */
+
+/* Logo */
+.logo-olx {
+    color: var(--olx-purple) !important; /* Força a cor roxa */
+    font-weight: 800; /* Fonte mais pesada */
+    font-size: 2.25rem; /* Tamanho grande */
+    text-decoration: none;
+}
+
+/* Botão Laranja "Anunciar" */
+.btn-anunciar {
+    background-color: var(--olx-orange);
+    color: white;
+    font-weight: 700;
+    border-radius: 30px; /* Bordas bem arredondadas */
+    padding: 8px 24px;
+    transition: background-color 0.2s;
+    text-transform: uppercase; /* OLX usa caixa alta */
+    font-size: 0.9rem;
+}
+
+.btn-anunciar:hover {
+    background-color: #e07000; /* Um tom de laranja mais escuro no hover */
+    color: white;
+}
+
+/* Barra de Pesquisa Customizada */
+.olx-search-input {
+    border: 1px solid #E5E5E5;
+    border-right: none; /* O botão fará a borda direita */
+    border-radius: 4px 0 0 4px; /* Arredonda só a esquerda */
+    height: 48px; /* Altura padrão da OLX */
+}
+
+/* Remove a sombra azul do Bootstrap ao focar */
+.olx-search-input:focus {
+    box-shadow: none;
+    border-color: var(--olx-purple); /* Destaca com a cor roxa */
+}
+
+.olx-search-button {
+    background-color: var(--olx-purple);
+    color: white;
+    border-radius: 0 4px 4px 0; /* Arredonda só a direita */
+    height: 48px;
+    width: 50px;
+    border: 1px solid var(--olx-purple);
+}
+
+.olx-search-button:hover {
+    background-color: #5a08b3; /* Roxo mais escuro */
+    border-color: #5a08b3;
+    color: white;
+}
+
+/* Links da Navbar (Chat, Entrar, etc.) */
+.olx-nav-link {
+    color: var(--olx-text-gray) !important; /* !important para sobrescrever o Bootstrap */
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0 8px; /* Espaçamento entre os links */
+}
+
+.olx-nav-link:hover {
+    color: var(--olx-purple) !important;
+}
+
+/* Ajustes de ícones (se estiver usando) */
+.olx-nav-link svg {
+    color: var(--olx-text-gray);
+    transition: color 0.2s;
+}
+.olx-nav-link:hover svg {
+    color: var(--olx-purple);
+}
+
+.category-bar {
+    /* Garante que ela fique "colada" no header */
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    /* Permite rolar horizontalmente no mobile */
+    overflow-x: auto;
+    
+    /* Esconde a barra de rolagem (visual) */
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Esconde a barra de rolagem (Chrome, Safari) */
+.category-list::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    /* Impede que os itens quebrem linha */
+    white-space: nowrap;
+}
+
+.category-link {
+    display: flex;
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--olx-text-gray);
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s;
+    min-height: 80px; /* Altura fixa para alinhar tudo */
+}
+
+.category-link:hover {
+    color: var(--olx-purple);
+}
+
+.category-link:hover .category-icon svg {
+    color: var(--olx-purple); /* Muda a cor do ícone no hover */
+}
+
+.category-icon {
+    margin-bottom: 5px;
+}
+
+.category-icon svg {
+    color: var(--olx-text-gray); /* Cor padrão do ícone */
+    transition: color 0.2s;
+}
+
+.category-bar-wrapper {
+    overflow-x: auto;  /* Permite rolar no eixo X (horizontal) */
+    -ms-overflow-style: none;  /* Oculta a barra de rolagem no IE e Edge */
+    scrollbar-width: none;  /* Oculta a barra de rolagem no Firefox */
+    padding-bottom: 10px; /* Um espaço para a sombra do scroll não ficar colada */
+}
+
+/* 2. Oculta a barra de rolagem no Chrome, Safari e Opera */
+.category-bar-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* 3. A barra de navegação em si */
+.category-bar-wrapper .nav {
+    flex-wrap: nowrap;     /* Impede que os itens "quebrem" para a linha de baixo */
+    white-space: nowrap;  /* Garante que o texto dentro dos links não quebre */
+}
+
+/* 4. Estilo dos links (pílulas) */
+.category-bar-wrapper .nav-link {
+    color: #333; /* Cor do texto (preto suave) */
+    background-color: #f8f9fa; /* Fundo cinza bem claro */
+    border: 1px solid #dee2e6;
+    border-radius: 20px; /* Deixa bem arredondado */
+    margin-right: 8px;   /* Espaçamento entre os botões */
+    font-weight: 500;
+}
+
+/* 5. Estilo do link ATIVO ou em HOVER */
+.category-bar-wrapper .nav-link:hover,
+.category-bar-wrapper .nav-link.active {
+    color: #fff; /* Texto branco */
+    background-color: #5b21b6; /* Um roxo (cor do seu botão de busca) - ajuste se quiser */
+    border-color: #5b21b6;
+}
+
+/*
+ * Configuração para o Footer "Grudar" em baixo (Sticky Footer)
+ */
+
+/* 1. Garante que o <html> e <body> ocupem 100% da altura */
+html, body {
+    height: 100%;
+}
+
+/* 2. Faz o wrapper principal do Vue/Laravel (#app) usar flexbox 
+      e ocupar 100% da altura, com direção de coluna */
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima de 100% da tela */
+}
+
+/* 3. Faz o <main> crescer e "empurrar" o footer para baixo */
+main {
+    flex: 1 0 auto;
+}
+
+/*
+ * Estilização do Footer
+ */
+.footer-olx {
+    background-color: #343a40; /* Cor de fundo escura (Bootstrap 'bg-dark') */
+    color: #f8f9fa; /* Cor de texto clara (Bootstrap 'text-light') */
+    width: 100%;
+}
+
+.footer-olx h5 {
+    color: #fff; /* Títulos em branco */
+    font-weight: 600;
+}
+
+.footer-olx .footer-text {
+    color: #adb5bd; /* Texto secundário (cinza claro) */
+}
+
+.footer-olx .footer-link {
+    color: #adb5bd; /* Cor dos links */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-olx .footer-link:hover {
+    color: #fff; /* Cor do link ao passar o mouse */
+    text-decoration: underline;
+}
+
+.footer-olx .footer-divider {
+    border-top: 1px solid #495057; /* Linha divisória */
+}
