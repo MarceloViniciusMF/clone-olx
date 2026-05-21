@@ -1,36 +1,40 @@
-# 🛒 Clone OLX - Estudo de Marketplace
+# 🛒 Clone OLX - Full Stack Study (Laravel)
 
-### ⚠️ Status: Projeto Legado / Inacabado
-Este repositório é um registro histórico dos meus primeiros estudos em desenvolvimento web full stack. Ele representa uma fase de aprendizado prático onde explorei a estrutura de um marketplace, lidando com rotas, banco de dados e interface de usuário.
-
----
-
-## 📝 Sobre o Projeto
-O objetivo era replicar as funcionalidades principais da OLX, como listagem de produtos, categorias e visualização de anúncios. Embora esteja inacabado, o projeto serviu para consolidar conceitos fundamentais que utilizo hoje.
-
-### 🛠️ Tecnologias Utilizadas (Base do Projeto)
-* **Lógica:** PHP / JavaScript
-* **Estilização:** CSS / Bootstrap
-* **Banco de Dados:** MySQL (Arquitetura de tabelas para anúncios e usuários)
+### ⚠️ Status: Projeto de Estudo / Desenvolvimento Pausado
+Este repositório é um registro da minha evolução no ecossistema PHP, utilizando o framework **Laravel**. O projeto foca na criação de um marketplace funcional, explorando desde a gestão de banco de dados até a experiência do usuário final.
 
 ---
 
-## 🔍 O que este código representa?
-Mesmo sendo um projeto antigo, ele demonstra minha evolução em:
-1. **Lógica de Negócio:** Entender como relacionar um usuário a um anúncio.
-2. **Estrutura de Pastas:** Organização inicial de um projeto web.
-3. **Persistência de Dados:** Primeiras interações com queries SQL e modelagem de dados.
+## 💻 Sobre o Projeto
+O sistema foi desenvolvido seguindo o padrão **MVC**, permitindo a listagem dinâmica de anúncios e categorias diretamente do banco de dados MySQL.
+
+### 🛠️ O que já foi implementado (Comprovado no Código):
+* **Gestão de Anúncios:** CRUD completo para anúncios (Criar, Editar, Visualizar e Deletar) utilizando `AdController`.
+* **Sistema de Autenticação:** Implementação nativa do Laravel (`Auth::routes()`) para login e registro de usuários.
+* **Middlewares de Segurança:** Proteção de rotas administrativas e de criação de anúncios, permitindo acesso apenas a usuários autenticados.
+* **Filtros Avançados:** Lógica de busca (`SearchController`) e filtragem por categorias via Slugs amigáveis.
+* **Front-end Dinâmico:** Uso de Blade Engines para renderização de componentes e layouts reaproveitáveis.
 
 ---
 
-## 🚀 Próximos Passos (Se eu fosse refatorar hoje)
-Como hoje meu foco é **Cibersegurança e Sistemas de Informação**, se eu fosse retomar este projeto, minhas prioridades seriam:
-- [ ] **Sanitização de Inputs:** Proteção rigorosa contra SQL Injection nas buscas de anúncios.
-- [ ] **Autenticação Segura:** Implementação de hashing de senhas (BCrypt) e gestão de sessões.
-- [ ] **Prevenção de XSS:** Validar e escapar todos os dados inseridos por usuários nos anúncios.
-- [ ] **Migração para Framework:** Mover a lógica para o **Laravel** para aproveitar as camadas de segurança nativas.
+## 🛡️ Visão de Cibersegurança (O meu diferencial)
+Como meu objetivo é a área de **Segurança da Informação**, este projeto Laravel é a base ideal porque já me permitiu praticar:
+1.  **Proteção CSRF:** Uso mandatório de tokens em todos os formulários (`@csrf`).
+2.  **Segurança de URL (Route Model Binding):** Uso de slugs em vez de IDs numéricos expostos, dificultando a enumeração de recursos.
+3.  **ORM Eloquent:** Prevenção nativa contra **SQL Injection** através do uso de Prepared Statements.
+4.  **Hashing de Senhas:** Armazenamento seguro de credenciais utilizando BCrypt (padrão do framework).
 
 ---
 
-## 📂 Como visualizar
-> **Nota:** Por ser um projeto antigo e de estudo, pode conter dependências desatualizadas ou caminhos de configuração locais. Ele está mantido aqui principalmente para fins de portfólio e histórico de progresso técnico.
+## 🚀 Roadmap de Refatoração (Próximos Passos)
+Para elevar o nível de segurança deste sistema, pretendo:
+- [ ] Implementar **Validação de Request** rigorosa para prevenir ataques de Mass Assignment.
+- [ ] Configurar **Rate Limiting** nas rotas de pesquisa para evitar ataques de negação de serviço (DoS) ou scraping excessivo.
+- [ ] Adicionar auditoria de logs para ações críticas (como deletar anúncios).
+
+---
+
+## 📂 Como rodar (Requisitos)
+* PHP 8.x
+* Composer
+* MySQL
